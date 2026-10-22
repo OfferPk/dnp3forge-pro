@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c14"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1100" height="650" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="550" y="50" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="bold" font-size="22" text-anchor="middle">DNP3Forge Pro — Architecture &amp; Substation Protocol Stack</text>
+  <text x="550" y="75" fill="#f59e0b" font-family="-apple-system, sans-serif" font-size="13" text-anchor="middle">IEEE Std 1815-2012 &amp; NERC CIP Substation Zero-Trust SCADA Pipeline</text>
+
+  <!-- Left Column: Protocol Layers -->
+  <g transform="translate(60, 110)">
+    <text x="0" y="20" fill="#94a3b8" font-family="-apple-system, sans-serif" font-weight="bold" font-size="14">IEEE STD 1815-2012 PROTOCOL STACK</text>
+
+    <!-- Application Layer -->
+    <rect x="0" y="35" width="460" height="60" rx="6" fill="#1e293b" stroke="#334155"/>
+    <text x="20" y="60" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="bold" font-size="13">Application Layer (APDU)</text>
+    <text x="20" y="80" fill="#f59e0b" font-family="-apple-system, sans-serif" font-size="11">Function Codes: 0x03 Select, 0x04 Operate, 0x01 Read, 0x81 Response</text>
+
+    <!-- Object Headers & CROB -->
+    <rect x="0" y="105" width="460" height="60" rx="6" fill="#1e293b" stroke="#334155"/>
+    <text x="20" y="130" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="bold" font-size="13">Object Layer &amp; CROB Relay Control</text>
+    <text x="20" y="150" fill="#06b6d4" font-family="monospace" font-size="11">Group 12 Var 1 (CROB): Trip / Close Pulse &amp; Latch Actuators</text>
+
+    <!-- Transport Layer -->
+    <rect x="0" y="175" width="460" height="60" rx="6" fill="#1e293b" stroke="#334155"/>
+    <text x="20" y="200" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="bold" font-size="13">Transport Layer (Pseudo-Transport Header)</text>
+    <text x="20" y="220" fill="#a855f7" font-family="-apple-system, sans-serif" font-size="11">Single-Byte Header: [FIN:1] [FIR:1] [SEQ: 0..63] Fragment Reassembly</text>
+
+    <!-- Data Link Layer (FT3) -->
+    <rect x="0" y="245" width="460" height="70" rx="6" fill="#1e293b" stroke="#334155"/>
+    <text x="20" y="270" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="bold" font-size="13">FT3 Data Link Layer (10-Byte Header + Block CRCs)</text>
+    <text x="20" y="288" fill="#10b981" font-family="monospace" font-size="11">Sync: 0x0564 | Length | Control | Dest (LE) | Src (LE) | CRC</text>
+    <text x="20" y="304" fill="#64748b" font-family="-apple-system, sans-serif" font-size="10">CRC-16/DNP (0x3D65 bit-reversed 0xA6BC, inverted) every 16 bytes</text>
+
+    <!-- Transport over TCP/IP -->
+    <rect x="0" y="325" width="460" height="60" rx="6" fill="#1e293b" stroke="#334155"/>
+    <text x="20" y="350" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="bold" font-size="13">Layer 3/4: TCP/UDP Port 20000 over IPv4</text>
+    <text x="20" y="370" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="11">Substation Bus Stream with RFC 1071 IP &amp; TCP One's Complement Checksums</text>
+
+    <!-- Layer 2 Ethernet -->
+    <rect x="0" y="395" width="460" height="50" rx="6" fill="#1e293b" stroke="#334155"/>
+    <text x="20" y="425" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="bold" font-size="13">Layer 2: IEEE 802.3 Ethernet II Frame with CRC32 FCS</text>
+  </g>
+
+  <!-- Right Column: NERC CIP Substation Defense -->
+  <g transform="translate(560, 110)">
+    <text x="0" y="20" fill="#94a3b8" font-family="-apple-system, sans-serif" font-weight="bold" font-size="14">NERC CIP &amp; SUBSTATION ZERO-TRUST PIPELINE</text>
+
+    <rect x="0" y="35" width="480" height="410" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- High-Voltage Bus Banner -->
+    <rect x="20" y="55" width="440" height="55" rx="6" fill="rgba(245, 158, 11, 0.1)" stroke="rgba(245, 158, 11, 0.3)"/>
+    <text x="35" y="78" fill="#f59e0b" font-family="-apple-system, sans-serif" font-weight="bold" font-size="12">High-Voltage Substation Bay Protection</text>
+    <text x="35" y="98" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">NERC CIP-005 Electronic Security Perimeter &amp; CIP-007 Port Hardening</text>
+
+    <!-- 10 Controls Checklist -->
+    <text x="20" y="135" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="bold" font-size="12">Enforced Substation Controls:</text>
+
+    <g transform="translate(20, 150)" font-family="-apple-system, sans-serif" font-size="11" fill="#cbd5e1">
+      <text x="0" y="15" fill="#10b981">✓</text> <text x="15" y="15">IEEE 1815-2012 SAv5 Secure Authentication (HMAC-SHA-256)</text>
+      <text x="0" y="38" fill="#10b981">✓</text> <text x="15" y="38">IPsec / TLS 1.3 Tunneling on Port 20000</text>
+      <text x="0" y="61" fill="#10b981">✓</text> <text x="15" y="61">Two-Step Select-Before-Operate (SBO) Breaker Tripping</text>
+      <text x="0" y="84" fill="#10b981">✓</text> <text x="15" y="84">Unsolicited Response Storm Backoff &amp; Throttling</text>
+      <text x="0" y="107" fill="#10b981">✓</text> <text x="15" y="107">CROB Role-Based Access Control (RBAC Dispatcher Auth)</text>
+      <text x="0" y="130" fill="#10b981">✓</text> <text x="15" y="130">Link Address Destination/Source Whitelisting</text>
+      <text x="0" y="153" fill="#10b981">✓</text> <text x="15" y="153">Broadcast Address (0xFFFF) Write/Operate Blocked</text>
+      <text x="0" y="176" fill="#10b981">✓</text> <text x="15" y="176">Anti-Replay Challenge Sequence &amp; 10m Key Rotation</text>
+      <text x="0" y="199" fill="#10b981">✓</text> <text x="15" y="199">Remote Cold/Warm Restart Hardening (Code 0x0E/0x0F)</text>
+      <text x="0" y="222" fill="#10b981">✓</text> <text x="15" y="222">Suricata DNP3 DPI Function Code Inspection</text>
+    </g>
+
+    <!-- Scorecard Badge -->
+    <rect x="20" y="390" width="440" height="40" rx="6" fill="rgba(16, 185, 129, 0.15)" stroke="rgba(16, 185, 129, 0.4)"/>
+    <text x="240" y="415" fill="#10b981" font-family="-apple-system, sans-serif" font-weight="bold" font-size="14" text-anchor="middle">500kV Transmission Substation: 100 / 100 (Grade A+)</text>
+  </g>
+
+  <!-- Bottom Synthesis Banner -->
+  <g transform="translate(60, 560)">
+    <rect x="0" y="0" width="980" height="60" rx="8" fill="#0f172a" stroke="#1e293b"/>
+    <text x="25" y="26" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="bold" font-size="13">Multi-Platform Substation Code &amp; Firewall Rule Generation</text>
+    <text x="25" y="45" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">Production 1-click generators for Python (opendnp3), Embedded C++ (OpenDNP3 IED), and Suricata DNP3 DPI / Linux nftables</text>
+    <rect x="760" y="13" width="200" height="34" rx="4" fill="url(#amberGrad)"/>
+    <text x="860" y="35" fill="#000000" font-family="-apple-system, sans-serif" font-weight="bold" font-size="12" text-anchor="middle">NERC CIP Ready</text>
+  </g>
+</svg>

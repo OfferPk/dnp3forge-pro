@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c14"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="700" fill="url(#bgGrad)"/>
+
+  <!-- Window Container -->
+  <rect x="20" y="20" width="1160" height="660" rx="12" fill="#0b111e" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Header -->
+  <rect x="20" y="20" width="1160" height="60" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <circle cx="50" cy="50" r="6" fill="#ef4444"/>
+  <circle cx="70" cy="50" r="6" fill="#f59e0b"/>
+  <circle cx="90" cy="50" r="6" fill="#10b981"/>
+
+  <rect x="120" y="36" width="55" height="28" rx="4" fill="url(#amberGrad)"/>
+  <text x="147" y="55" fill="#000000" font-family="-apple-system, sans-serif" font-weight="900" font-size="13" text-anchor="middle">DNP3</text>
+  <text x="190" y="56" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="bold" font-size="18">DNP3Forge Pro</text>
+  <text x="330" y="56" fill="#f59e0b" font-family="-apple-system, sans-serif" font-size="13">v1.0.0 — IEEE Std 1815-2012 Substation Studio</text>
+
+  <!-- Port 20000 Badge -->
+  <rect x="910" y="38" width="250" height="26" rx="13" fill="rgba(245, 158, 11, 0.15)" stroke="rgba(245, 158, 11, 0.4)"/>
+  <circle cx="925" cy="51" r="4" fill="#f59e0b"/>
+  <text x="935" y="55" fill="#f59e0b" font-family="-apple-system, sans-serif" font-weight="600" font-size="11">PORT 20000 TCP/UDP SUBSTATION BUS</text>
+
+  <!-- Tabs Bar -->
+  <rect x="20" y="80" width="1160" height="40" fill="#080c14"/>
+  <rect x="40" y="86" width="150" height="28" rx="4" fill="rgba(245, 158, 11, 0.15)" stroke="rgba(245, 158, 11, 0.4)"/>
+  <text x="115" y="105" fill="#f59e0b" font-family="-apple-system, sans-serif" font-weight="600" font-size="12" text-anchor="middle">FT3 Wireframe Studio</text>
+  <text x="250" y="105" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="12">CROB Relay Packer</text>
+  <text x="430" y="105" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="12">16-Bit IIN Diagnoser</text>
+  <text x="610" y="105" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="12">NERC CIP Zero-Trust Auditor</text>
+  <text x="830" y="105" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="12">Code &amp; Rule Synthesizer</text>
+
+  <!-- Two Columns -->
+  <!-- Left Panel: Frame Generator -->
+  <rect x="40" y="140" width="530" height="520" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="60" y="175" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="bold" font-size="15">DNP3 FT3 Frame Generator</text>
+  <rect x="440" y="160" width="110" height="20" rx="10" fill="rgba(245, 158, 11, 0.15)"/>
+  <text x="495" y="174" fill="#f59e0b" font-family="-apple-system, sans-serif" font-size="10" text-anchor="middle">IEEE 1815-2012</text>
+
+  <text x="60" y="215" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">Application Function Code</text>
+  <rect x="60" y="225" width="490" height="34" rx="4" fill="#1e293b" stroke="#334155"/>
+  <text x="75" y="247" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="12">0x03 - Select (Select-Before-Operate SBO Step 1)</text>
+
+  <text x="60" y="285" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">Destination &amp; Source Link Addresses</text>
+  <rect x="60" y="295" width="235" height="34" rx="4" fill="#1e293b" stroke="#334155"/>
+  <text x="75" y="317" fill="#ffffff" font-family="monospace" font-size="12">1 (Outstation RTU)</text>
+  <rect x="315" y="295" width="235" height="34" rx="4" fill="#1e293b" stroke="#334155"/>
+  <text x="330" y="317" fill="#ffffff" font-family="monospace" font-size="12">2 (Master SCADA)</text>
+
+  <text x="60" y="355" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">Target Control Relay Object</text>
+  <rect x="60" y="365" width="490" height="34" rx="4" fill="#1e293b" stroke="#334155"/>
+  <text x="75" y="387" fill="#fde68a" font-family="monospace" font-size="12">Group 12 Var 1 (CROB): TRIP Pulse-On Point 0</text>
+
+  <text x="60" y="425" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">Transport &amp; Application Sequence Number</text>
+  <rect x="60" y="435" width="490" height="34" rx="4" fill="#1e293b" stroke="#334155"/>
+  <text x="75" y="457" fill="#ffffff" font-family="monospace" font-size="12">1 (Unfragmented FIR=1, FIN=1)</text>
+
+  <rect x="60" y="580" width="490" height="42" rx="6" fill="url(#amberGrad)"/>
+  <text x="305" y="606" fill="#000000" font-family="-apple-system, sans-serif" font-weight="bold" font-size="13" text-anchor="middle">Export Binary PCAP Capture (.pcap)</text>
+
+  <!-- Right Panel: Wire Frame & Dissector -->
+  <rect x="600" y="140" width="560" height="520" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="620" y="175" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="bold" font-size="15">Ethernet II / IP / TCP (Port 20000) / DNP3 Frame</text>
+  <rect x="1030" y="160" width="110" height="20" rx="10" fill="rgba(16, 185, 129, 0.15)"/>
+  <text x="1085" y="174" fill="#10b981" font-family="-apple-system, sans-serif" font-size="10" text-anchor="middle">CRC-16/DNP OK</text>
+
+  <rect x="620" y="200" width="520" height="150" rx="4" fill="#030712" stroke="#1e293b"/>
+  <text x="635" y="225" fill="#f59e0b" font-family="monospace" font-size="11">00 1b 1b 11 22 33 00 0e 8c 44 55 66 08 00 45 00</text>
+  <text x="635" y="245" fill="#f59e0b" font-family="monospace" font-size="11">00 53 18 15 40 00 40 06 9a 12 0a 64 01 32 0a 64</text>
+  <text x="635" y="265" fill="#f59e0b" font-family="monospace" font-size="11">01 64 c0 00 4e 20 00 01 81 50 00 02 81 50 50 18</text>
+  <text x="635" y="285" fill="#06b6d4" font-family="monospace" font-size="11">fa f0 a1 b2 00 00 05 64 18 c4 01 00 02 00 e3 81</text>
+  <text x="635" y="305" fill="#10b981" font-family="monospace" font-size="11">c1 c1 03 0c 01 17 01 00 81 01 64 00 00 00 64 00</text>
+  <text x="635" y="325" fill="#8b5cf6" font-family="monospace" font-size="11">00 00 00 da a7 5a 12 fe 49</text>
+
+  <text x="620" y="380" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="12">Dissected IEEE 1815 Protocol Structure:</text>
+  <rect x="620" y="395" width="520" height="240" rx="4" fill="#030712" stroke="#1e293b"/>
+  <text x="635" y="420" fill="#f8fafc" font-family="monospace" font-size="11">{</text>
+  <text x="650" y="440" fill="#f59e0b" font-family="monospace" font-size="11">"sync": "0x0564",</text>
+  <text x="650" y="460" fill="#f59e0b" font-family="monospace" font-size="11">"lengthField": 24,</text>
+  <text x="650" y="480" fill="#06b6d4" font-family="monospace" font-size="11">"control": { "dir": "MasterToOutstation", "prm": "Primary", "fc": 4 },</text>
+  <text x="650" y="500" fill="#06b6d4" font-family="monospace" font-size="11">"addresses": { "destination": 1, "source": 2 },</text>
+  <text x="650" y="520" fill="#10b981" font-family="monospace" font-size="11">"headerCrc": { "wire": "0xE381", "valid": true },</text>
+  <text x="650" y="540" fill="#10b981" font-family="monospace" font-size="11">"blockCrcsValid": true,</text>
+  <text x="650" y="560" fill="#8b5cf6" font-family="monospace" font-size="11">"applicationLayer": { "seq": 1, "functionCode": "0x03 (SELECT)" },</text>
+  <text x="650" y="580" fill="#fde68a" font-family="monospace" font-size="11">"crob": { "action": "TRIP", "opType": "PulseOn", "point": 0 }</text>
+  <text x="635" y="600" fill="#f8fafc" font-family="monospace" font-size="11">}</text>
+</svg>
